@@ -106,6 +106,19 @@
         animation: linegrow .4s 4.2s linear forwards;
     }
 
+    .proyect-card > * {
+        transition: opacity 100ms ease-in;
+    }
+    .proyect-card-title {
+        @apply text-4xl tracking-tighter font-bold flex text-neutral-300;
+        transition: color 500ms;
+    }
+    .proyect-card-title span:nth-child(-n + 2) {
+        margin-right: -3px;
+    }
+    .proyect-card-title span:nth-child(3) {
+        margin-right: .5rem;
+    }
 
     .Home > section {
         @apply grid grid-cols-7 pl-20;

@@ -1,8 +1,9 @@
 import React from 'react'
-import { HOME_CODE, PROYECTS_CODE } from '../../constants'
+import { PROYECTS_CODE } from '../../constants'
 import CodeBg from '../background/CodeBg'
 import Avatar from '../common/Avatar'
 import TextSlider from '../common/TextSlider'
+import Card from '../proyects/Card'
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
             <section className='h-screen items-center'>
                 <article className='h-fit col-span-4 flex flex-col'>
                     <h1 className="text-white font-bold tracking-tighter text-8xl">Fabricio Repetto</h1>
-                    <p className="pl-40 w-3/4 text-4xl text-white font-bold mb-8">{`// web developer`}</p>
+                    <p className="pl-40 w-3/4 text-4xl text-white font-bold mb-8">{`/// web developer`}</p>
 
                     <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
                         <b className=' text-emerald-600 font-normal -ml-6 mr-2'>{`<`}</b>
@@ -53,33 +54,16 @@ const Home = () => {
             <section className='h-screen items-center relative'>
 
                 <article className='h-fit col-span-4 flex flex-col '>
-                    <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Proyectos</h2>
+                    <h2 className="text-white font-bold tracking-tighter text-8xl mb-16">Proyectos</h2>
 
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
-                        <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        Cabañas Clarita
-                        <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                    </p>
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
-                        <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        Diet Mate
-                        <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                    </p>
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
-                        <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        TicTacToe
-                        <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                    </p>
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
-                        <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        Provider Store
-                        <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                    </p>
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
-                        <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        Dog House
-                        <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                    </p>
+                    <div className="pl-40 w-3/4">
+                        <Card title='Cabañas Clarita' description='Sistema de gestión' />
+                        <Card title='Diet Mate' description='Organizador de comidas' />
+                        <Card title='TicTacToe' description='Juego online' space="pl-2" />
+                        <Card title='Provider Store' description='Ecommerce' space="pl-6" />
+                        <Card title='Dog House' description='Colección de perros' space="pl-16" />
+                    </div>
+
                 </article>
 
                 <div className='absolute left-2/3 top-0 h-full'>
