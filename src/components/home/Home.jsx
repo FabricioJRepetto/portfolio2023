@@ -1,6 +1,7 @@
 import React from 'react'
+import { HOME_CODE, PROYECTS_CODE } from '../../constants'
+import CodeBg from '../background/CodeBg'
 import Avatar from '../common/Avatar'
-import SideWriter from '../common/SideWriter'
 import TextSlider from '../common/TextSlider'
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
                     </p>
                 </article>
 
-                <div className='m-auto col-span-3'>
+                <div className='relative m-auto col-span-3'>
                     <Avatar />
                 </div>
             </section>
@@ -30,11 +31,15 @@ const Home = () => {
                 <article className='h-fit col-span-4 flex flex-col '>
                     <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Sobre Mí</h2>
 
-                    <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
+                    <p className='pl-40 w-3/4 text-xl boder-slate-500'>
                         <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                        Tengo bases en diseño gráfico y fotografía, por lo que la creatividad es algo muy importante para mí.<br />
-                        Siempre sentí curiosidad por la programación y en 2016 realicé un curso de fundamentos de Java, certificado por Oracle. Pero fue en 2021 que comencé a estudiar por mi cuenta desarrollo web con JavaScript y me dí cuenta de la libertad creativa que ofrece la programación. Es posible materializar literalmente cualquier cosa y eso es algo que me fascinó.<br />
-                        Desde entonces estoy realizando proyectos para probar tecnologías nuevas, ponerme a prueba y perfeccionar mis habilidades.
+                        Siempre sentí curiosidad por la programación y en 2016 realicé un curso de fundamentos de Java, certificado por Oracle. En 2021 comencé a estudiar desarrollo web con JavaScript de manera autodidacta junto a un grupo de amigos.
+                        <br />
+                        <br />
+                        Mis bases en diseño gráfico y fotografía me llevó a apreciar la libertad creativa que ofrece la programación, algo que me pareció fascinante.
+                        <br />
+                        <br />
+                        Desde entonces, he dedicado mi tiempo y esfuerzo a mejorar mis habilidades y conocimientos trabajando en proyectos que combinan soluciones creativas y efectivas con  diseño de experiencias de usuario atractivas e intuitivas.
                         <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                     </p>
                 </article>
@@ -45,7 +50,7 @@ const Home = () => {
 
             </section>
 
-            <section className='h-screen items-center'>
+            <section className='h-screen items-center relative'>
 
                 <article className='h-fit col-span-4 flex flex-col '>
                     <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Proyectos</h2>
@@ -77,6 +82,9 @@ const Home = () => {
                     </p>
                 </article>
 
+                <div className='absolute left-2/3 top-0 h-full'>
+                    <CodeBg text={PROYECTS_CODE} id='proyects' />
+                </div>
             </section>
 
             <section className='h-screen items-center'>

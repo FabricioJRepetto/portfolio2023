@@ -77,15 +77,38 @@
     .App {
         @apply min-h-screen relative overflow-hidden;
         max-width: 100vw;
-        background-image: url('./assets/images/portfolio_bg-02.svg');
         background-size: 100%;
     }
+
+    .innerLine {
+        stroke-dasharray: 3700;
+        stroke-dashoffset: 3700;
+        animation: linegrow 1s 2.7s linear forwards;
+    }
+    .outerLine {
+        stroke-dasharray: 5500;
+        stroke-dashoffset: 5500;
+        animation: linegrow 2s 3.2s linear forwards;
+    }
+    .triO {
+        stroke-dasharray: 450;
+        stroke-dashoffset: 450;
+        animation: linegrow .3s 3.2s linear forwards;
+    }
+    .triR {
+        stroke-dasharray: 450;
+        stroke-dashoffset: 450;
+        animation: linegrow .3s 3.7s linear forwards;
+    }
+    .triB {
+        stroke-dasharray: 450;
+        stroke-dashoffset: 450;
+        animation: linegrow .4s 4.2s linear forwards;
+    }
+
+
     .Home > section {
         @apply grid grid-cols-7 pl-20;
-    }
-    
-    #outer3 path {
-        fill: #ff0000 !important;
     }
 
     .fade-in {
@@ -134,8 +157,10 @@
         @apply p-8 text-xl font-light text-transparent bg-gradient-to-b from-transparent via-emerald-700 to-emerald-500 bg-clip-text animate-pulse relative;
         font-family: 'PT Mono', monospace;
         filter: drop-shadow(50px 50px 40px rgb(28, 241, 166)) blur(0px);
-        transform: rotateY(30deg) skewX(-30deg);
         min-width: 30rem;
+    }
+    .angle {
+        transform: rotateY(30deg) skewX(-30deg);
     }
     /* text-transparent bg-gradient-to-b from-transparent via-lime-600 to-lime-500 bg-clip-text  */
     .hologram > p {
@@ -156,6 +181,36 @@
         background-size: 2vmin 2vmin;
         height: 100%;
         width: 100%;
+    }
+    
+    .slider-circles > div {
+        @apply h-96 aspect-square absolute -top-36 left-40 border;
+        border-radius: 100%;
+        animation: blobing 15s ease infinite;
+    }
+
+    .blobing {
+        border-radius: 100%;
+        animation: 16s blobing .25s ease infinite;
+    }
+}
+
+@keyframes bg-rotate {
+    0% {
+        transform: rotate(0deg);
+        /* opacity: 0; */
+    }
+    50% {
+        /* opacity: 1; */
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes linegrow {
+    to {
+        stroke-dashoffset: 0;
     }
 }
 
@@ -192,5 +247,46 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes blobing {
+    0% {
+        border-top-right-radius: 65%;
+        border-top-left-radius: 170%;
+        border-bottom-right-radius: 170%;
+        border-bottom-left-radius: 70%;
+    }
+    
+    25% {
+        border-top-right-radius: 60%;
+        border-top-left-radius: 70%;
+        border-bottom-right-radius: 60%;
+        border-bottom-left-radius: 60%;
+        transform: rotate(-45deg) scale(.9);
+    }
+    
+    50% {
+        border-top-right-radius:20%;
+        border-top-left-radius:20%;
+        border-bottom-right-radius:20%;
+        border-bottom-left-radius:20%;
+    }
+
+    55% {        
+        transform: rotate(135deg) scale(1);
+    }
+
+    75% {
+        border-radius: 60%;
+        transform: rotate(180deg) scale(.8);
+    }
+
+    100% {
+        border-top-right-radius: 65%;
+        border-top-left-radius: 170%;
+        border-bottom-right-radius: 170%;
+        border-bottom-left-radius: 70%;
+        transform: scale(1);
     }
 }

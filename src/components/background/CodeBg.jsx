@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { typer } from './utils/typer'
 
-const CodeBg = ({ text, angle }) => {
+const CodeBg = ({ text, id, angle = false }) => {
     const str = useRef(null)
+
     // const str = text.split('λ') || 'Lorem ipsum, dolor sit ametλadipisicing elit. Natus λΩipsa nobis veniam λΩΩimpedit doloremque λΩΩnostrum iste praesentium λ saepe dolorem possimus iusto, aperiam λΩcupiditate λΩΩculpa quo λΩamet, assumenda deleniti λΩΩquidem λ laudantium.'.split('λ')
 
     //? α: ---
@@ -12,17 +13,17 @@ const CodeBg = ({ text, angle }) => {
     useEffect(() => {
         if (text !== str.current) {
             str.current = text
-            typer(str.current)
+            typer(str.current, id)
         }
-    }, [text, str])
+    }, [text, str, id])
 
     return (
-        <div className={`flex flex-col h-screen w-screen justify-center text-left absolute top-0 bottom-0 left-2/3 select-none`}>
+        <div className={`flex flex-col h-full w-max justify-center text-left absolute top-0 bottom-0 left-0 select-none`}>
             <div className='relative'>
-                <div className={`hologram  ${angle ? '' : 'text-rose-600'}`}>
+                <div className={`hologram transition-transform duration-500 ${angle ? 'angle' : ''}`}>
                     <div className='hologram-dots'></div>
-                    <p id={'line'}></p>
-                    <p id='loading-bar'></p>
+                    <p id={'line' + id}></p>
+                    <p id={'loading-bar' + id}></p>
                 </div>
             </div>
         </div>

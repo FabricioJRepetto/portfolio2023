@@ -10,12 +10,10 @@ const loading = (loadingBar) => {
     }, 50);
 }
 
-export const typer = async (str) => {
-    const ele = document.getElementById('line'),
-        loadingBar = document.getElementById('loading-bar'),
+export const typer = async (str, id) => {
+    const ele = document.getElementById('line' + id),
+        loadingBar = document.getElementById('loading-bar' + id),
         text = str
-
-    // if (loadingBar) loadingBar.textContent = ''
 
     if (!ele) {
         loading(loadingBar)
@@ -33,7 +31,6 @@ export const typer = async (str) => {
         if (i === text.length) {
             clearInterval(typerInt)
             loading(loadingBar)
-            // typer(str, index + 1)
         }
     }, 5);
 }
