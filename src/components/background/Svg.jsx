@@ -1,21 +1,6 @@
 import React from 'react'
 
 export const Svg = () => {
-
-    const line = document.getElementById('horizontalLine')
-    console.log(line);
-    // gsap.to(val, {
-    //     distance: fuse.getTotalLength(),
-    //     repeat: -1,
-    //     duration: 5,
-    //     onUpdate: () => {
-    //         // Query a point at the new distance value
-    //         const point = fuse.getPointAtLength(val.distance);
-    //         // Create a new particle
-    //         createParticle(point);
-    //     }
-    // });
-
     return (
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 4320">
             <defs>
