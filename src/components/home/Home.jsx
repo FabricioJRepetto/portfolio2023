@@ -1,10 +1,8 @@
 import React from 'react'
-import { PROYECTS_CODE } from '../../constants'
-import CodeBg from '../background/CodeBg'
 import Avatar from '../common/Avatar'
-import GitHubChart from '../common/GitHubChart'
 import TextSlider from '../common/TextSlider'
-import Card from '../proyects/Card'
+import Projects from '../projects/Projects'
+import Contact from './sections/Contact'
 
 const Home = () => {
     return (
@@ -17,13 +15,12 @@ const Home = () => {
 
                     <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
                         <b className=' text-emerald-600 font-normal -ml-6 mr-2'>{`<`}</b>
-                        Desarrollador full stack viviendo en Argentina.<br />
-                        Actualmente centrado en tecnologías JavaScript.
+                        Hola! Soy un desarrollador full stack en Argentina. Me gustan los diseños atractivos y las soluciones ingeniosas.
                         <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                     </p>
                 </article>
 
-                <div className='relative m-auto col-span-3'>
+                <div className='relative col-span-3'>
                     <Avatar />
                 </div>
             </section>
@@ -50,7 +47,6 @@ const Home = () => {
                 <div className='col-span-3 text-8xl tracking-tighter font-bold text-emerald-600'>
                     <TextSlider text={['Imaginar', 'Aprender', 'Crear', 'Repetir']} />
                 </div>
-
                 <div className='absolute bottom-32 w-screen col-span-7 flex gap-8 justify-center items-start text-emerald-600'>
                     <p>JavaScript</p>
                     <p>HTML</p>
@@ -73,50 +69,20 @@ const Home = () => {
 
 
             <section className='h-screen items-center relative'>
-                <article className='h-fit col-span-4 flex flex-col '>
-                    <h2 className="text-white font-bold tracking-tighter text-8xl mb-16">Proyectos</h2>
+                <Projects />
+            </section>
 
-                    <div className="pl-40 w-3/4">
-                        <Card title='Cabañas Clarita' description='Sistema de gestión' />
-                        <Card title='Diet Mate' description='Organizador de comidas' />
-                        <Card title='TicTacToe' description='Juego online' space="pl-2" />
-                        <Card title='Provider Store' description='Ecommerce' space="pl-6" />
-                        <Card title='Dog House' description='Colección de perros' space="pl-16" />
-                    </div>
+            <section className='contact-section items-center mt-40'>
+                <Contact />
+            </section>
 
-                </article>
-
-                <div className='absolute left-2/3 top-0 h-full'>
-                    <CodeBg text={PROYECTS_CODE} id='proyects' />
+            <div className='footer pb-4 border flex items-center'>
+                <div className='border h-8 w-screen col-span-7 flex gap-8 justify-center text-emerald-600'>
+                    <p>Sobre esta página:</p>
+                    <p>V1</p>
+                    <p>Repositorio</p>
                 </div>
-            </section>
-
-            <section className='h-screen items-center'>
-
-                <article className='h-fit col-span-4 flex flex-col '>
-                    <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Contacto</h2>
-
-                    <div className='pl-40'>
-                        <a href='https://www.linkedin.com/in/fabricio-repetto/' target='_bank'>
-                            <Card title='LinkedIn' description='linkedin.com/in/fabricio-repetto' space='pl-2' />
-                        </a>
-
-                        <a href='https://github.com/FabricioJRepetto' target='_bank'>
-                            <Card title='GitHub' description='github.com/FabricioJRepetto' space='pl-4' />
-                        </a>
-
-                        <a href='mailto:fabricio.j.repetto@gmail.com'>
-                            <Card title='Email' description='fabricio.j.repetto@gmail.com' space='pl-12' />
-                        </a>
-
-                    </div>
-                </article>
-
-                <article className='col-span-3'>
-                    <p className="pl-40 w-3/4 text-4xl text-white font-bold mb-8">Saludame!</p>
-                    <GitHubChart />
-                </article>
-            </section>
+            </div>
         </div>
     )
 }

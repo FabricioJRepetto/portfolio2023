@@ -82,7 +82,7 @@ const GitHubChart = () => {
                             <div key={i} data-level={lvl(d)}></div>
                         ))
                     }
-                    <p className='stroke absolute top-0 -left-16'>{data?.total || ''}</p>
+                    <p className='chart-text'>{data?.total || ''}</p>
                 </div>}
         </div>
     )

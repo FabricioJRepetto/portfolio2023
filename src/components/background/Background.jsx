@@ -15,7 +15,7 @@ export const Background = () => {
             <div className='absolute inset-0'>
                 <Svg />
                 <div className='absolute h-screen top-0 left-2/3'>
-                    <CodeBg text={HOME_CODE} id='main' angle={angle} />
+                    <CodeBg text={HOME_CODE} id='main' angle={angle} loadingAnim />
                 </div>
             </div>
         </div>

@@ -120,7 +120,7 @@
     }
 
     .Home > section {
-        @apply grid grid-cols-7 pl-20;
+        @apply grid grid-cols-7 pl-32;
     }
 
     .fade-in {
@@ -146,7 +146,7 @@
 
     .frame {
         border-radius: 100%;        
-        height: 20rem;
+        height: 30rem;
         aspect-ratio:1/1;
     }
     .middleline {
@@ -157,12 +157,11 @@
         border-top-left-radius: 85%;
         border-bottom-right-radius: 85%;
     }
-
     .avatar {        
-        background-image: url('./assets/avatar/avatar-dots-circle-2.png');
+        background-image: url('./assets/avatar/avatar-dots-V3.png');        
         background-size: 110%;
         background-position: 50% 20%;
-        filter: drop-shadow(0px 0px 20px rgba(28, 241, 166, 0.2));
+        filter: drop-shadow(0px 0px 20px rgba(28, 241, 166, 0.1));
     }
 
     .hologram {
@@ -232,9 +231,41 @@
         @apply border-0 bg-emerald-500;
     }
 
-    .stroke {
-        @apply text-2xl font-extrabold tracking-tighter text-emerald-900;
+    .chart-text {
+        @apply absolute top-0 -left-16 text-2xl font-extrabold tracking-tighter text-emerald-900;
         font-family: 'PT Mono', monospace;
+    }
+
+    .fade-out {
+        @apply transition-all;
+        animation: .3s fadeout ease forwards;
+    }
+    .contact-hologram {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .test {
+        @apply relative font-light text-transparent bg-gradient-to-b from-transparent via-emerald-700 to-emerald-500 bg-clip-text animate-pulse;
+        
+        height: 22rem;
+        aspect-ratio:1/1;
+        
+        font-family: 'Courier Prime', monospace;
+        line-height: 70%;
+        letter-spacing: .1em;
+        font-size: 1.2em;
+        white-space: break-spaces;
+
+        filter: drop-shadow(50px 50px 40px rgb(28, 241, 166));
+    }
+
+    .contact-section {
+        height: 80vh;
+    }
+    .footer {
+        height: 20vh;
     }
 }
 
@@ -255,6 +286,11 @@
 
     100% {
         opacity: 1;
+    }
+}
+@keyframes fadeout {
+    to {
+        opacity: 0;
     }
 }
 

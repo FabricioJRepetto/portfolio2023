@@ -10,27 +10,27 @@ const loading = (loadingBar) => {
     }, 50);
 }
 
-export const typer = async (str, id) => {
+export const typer = async ({ text, id, loadingAnim = false, fast = false }) => {
     const ele = document.getElementById('line' + id),
-        loadingBar = document.getElementById('loading-bar' + id),
-        text = str
+        loadingBar = loadingAnim ? document.getElementById('loading-bar' + id) : null
+
 
     if (!ele) {
-        loading(loadingBar)
+        loadingBar && loading(loadingBar)
         return
     }
 
     ele.textContent = ''
-    loadingBar.textContent = ''
+    loadingBar && (loadingBar.textContent = '')
 
     let i = 0
     const typerInt = setInterval(() => {
-        ele.append(text[i])
+        ele.append(text[i], fast ? text[i + 1] : '')
 
-        i++
+        i += fast ? 2 : 1
         if (i === text.length) {
             clearInterval(typerInt)
-            loading(loadingBar)
+            loadingBar && loading(loadingBar)
         }
-    }, 5);
+    }, fast ? 1 : 5);
 }

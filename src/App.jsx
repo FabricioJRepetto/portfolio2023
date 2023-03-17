@@ -1,6 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { Background } from './components/background/Background';
 import Home from './components/home/Home';
+import ClaritaAdmin from './components/projects/views/ClaritaAdmin';
+import DietMate from './components/projects/views/DietMate';
+import DogHouse from './components/projects/views/DogHouse';
+import Provider from './components/projects/views/Provider';
+import TicTacToe from './components/projects/views/TicTacToe';
 import Layout from './components/utils/Layout';
 import { Redirect } from './components/utils/Redirect';
 
@@ -14,12 +19,12 @@ function App() {
                 <Route path='/home' element={<Home />} />
 
                 <Route path="projects" element={<Layout />} >
-                    <Route index element={<Home />} />
-                    <Route path="dog_house" element={<Home />} />
-                    <Route path="provider_store" element={<Home />} />
-                    <Route path="tictactoe" element={<Home />} />
-                    <Route path="die_tmate" element={<Home />} />
-                    <Route path="clarita_admin" element={<Home />} />
+                    <Route index element={<Layout />} />
+                    <Route path="doghouse" element={<DogHouse />} />
+                    <Route path="providerstore" element={<Provider />} />
+                    <Route path="tictactoe" element={<TicTacToe />} />
+                    <Route path="dietmate" element={<DietMate />} />
+                    <Route path="claritaadmin" element={<ClaritaAdmin />} />
                 </Route>
             </Routes>
         </div>
