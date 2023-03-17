@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { EMAIL, GITHUB, LINKEDIN, RESUME } from '../../../constants'
 import Card from '../../projects/Card'
-import Test from '../../utils/Test'
 import GitHubChart from "../../common/GitHubChart";
+import ContactHolo from '../../utils/ContactHolo';
 
 const Contact = () => {
     const [selected, setSelected] = useState(null)
@@ -19,7 +19,7 @@ const Contact = () => {
             <article className='h-fit col-span-4 flex flex-col'>
                 <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Conectemos</h2>
 
-                <div className='pl-40'>
+                <div className='ml-40 w-fit'>
                     <a href='https://www.linkedin.com/in/fabricio-repetto/' target='_bank'
                         onMouseEnter={() => setSelected(() => 'link')}
                         onMouseLeave={() => setSelected(() => null)}>
@@ -49,12 +49,12 @@ const Contact = () => {
             <article className='col-span-3 h-full relative'>
                 {selected &&
                     <div className='contact-hologram fade-in'>
-                        <Test text={text[selected]} />
+                        <ContactHolo text={text[selected]} />
                     </div>}
 
-                <div className={`${selected ? 'fade-out angle' : 'fade-in'} relative top-1/2 `}>
+                <div className={`${selected ? 'fade-out angle' : 'x-fade-in'} relative top-1/2 `}>
                     <GitHubChart />
-                    <p className="absolute inset-0 text-8xl font-thin mb-8">Saludame!</p>
+                    {/* <p className="absolute inset-0 text-8xl font-bold mb-8">Saludame!</p> */}
                 </div>
             </article>
         </>

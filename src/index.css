@@ -118,17 +118,37 @@
     .proyect-card-title span:nth-child(3) {
         margin-right: .5rem;
     }
+    .card-image {
+        @apply h-28 w-96 ml-20 -mt-4 relative transition-all;
+        filter: grayscale(1) brightness(.5);
+        transition-duration: 500ms;
+        background-position: center;
+        background-size: cover;
+    }
+    .provider-glitch {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* aspect-ratio: 4/1; */
+        background: center / contain no-repeat url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1659650791/PROVIDER_LOGO_glitch_aberration_kt2hyv.png');
+    }
+    .doghouse-logo {
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+    .doghouse-logo * {        
+        position: absolute;
+        height: 100%;
+        width: auto;
+    }
+    .doghouse-logo img {        
+        animation: dogspin infinite 130s linear;
+    }
 
     .Home > section {
         @apply grid grid-cols-7 pl-32;
-    }
-
-    .fade-in {
-        animation: fadein .3s ease-in forwards;
-    }
-    .side-fade-in {
-        opacity: 0;
-        animation: sidefadein 4000ms cubic-bezier(0.25, 1, 0.5, 1) infinite;
     }
 
     .blue {
@@ -236,17 +256,13 @@
         font-family: 'PT Mono', monospace;
     }
 
-    .fade-out {
-        @apply transition-all;
-        animation: .3s fadeout ease forwards;
-    }
     .contact-hologram {
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
     }
-    .test {
+    .contact-holo {
         @apply relative font-light text-transparent bg-gradient-to-b from-transparent via-emerald-700 to-emerald-500 bg-clip-text animate-pulse;
         
         height: 22rem;
@@ -259,13 +275,30 @@
         white-space: break-spaces;
 
         filter: drop-shadow(50px 50px 40px rgb(28, 241, 166));
-    }
+    }    
 
     .contact-section {
         height: 80vh;
     }
     .footer {
         height: 20vh;
+    }
+
+    .fade-in {
+        animation: fadein .3s ease-in forwards;
+    }
+    .side-fade-in {
+        opacity: 0;
+        animation: sidefadein 4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+    .x-fade-in {
+        opacity: 0;
+        animation: .3s fadein .5s ease-in forwards;
+    }
+    .fade-out {
+        @apply transition-all;
+        opacity: 0;
+        animation: .3s fadeout ease forwards;
     }
 }
 
@@ -355,4 +388,13 @@
         border-bottom-left-radius: 70%;
         transform: scale(1);
     }
+}
+
+@keyframes dogspin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { typer } from '../background/utils/typer'
 
-const Test = ({ text, id = 'contact' }) => {
+const ContactHolo = ({ text, id = 'contact' }) => {
     const str = useRef(null)
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const Test = ({ text, id = 'contact' }) => {
     }, [text, str, id])
 
     return (
-        <div className='test angle'>
+        <div className='contact-holo angle'>
             <div className='hologram-dots left-10 top-10'></div>
 
             <p id={'line' + id}></p>
@@ -24,4 +24,4 @@ const Test = ({ text, id = 'contact' }) => {
     )
 }
 
-export default Test
+export default ContactHolo

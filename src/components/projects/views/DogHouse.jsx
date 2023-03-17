@@ -1,8 +1,15 @@
 import React from 'react'
+import DogHouseAnim from '../extras/DogHouseAnim'
 
 const DogHouse = () => {
     return (
-        <div>DogHouse</div>
+        <div>
+            <h1>Dog House</h1>
+
+            <div className='h-80 relative'>
+                <DogHouseAnim />
+            </div>
+        </div>
     )
 }
 
