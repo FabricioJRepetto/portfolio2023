@@ -16,8 +16,7 @@ const Projects = () => {
             <article className='h-fit col-span-7 flex flex-col'>
                 <h2 className="text-white font-bold tracking-tighter text-8xl mb-16">Proyectos</h2>
 
-                <div className="w-fit self-center z-10 border">
-
+                <div className="w-fit self-center z-10">
                     <label onClick={() => navigate('/projects/claritaadmin')}>
                         <Card title='Cabañas Clarita' description='Sistema de gestión' image='claritaadmin' />
                     </label>

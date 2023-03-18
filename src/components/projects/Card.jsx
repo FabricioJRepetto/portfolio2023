@@ -13,13 +13,13 @@ const Card = ({ title, description, space, image }) => {
     const IMG_URL = {
         provider: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679087971/portfolio-preview/slider-0_idihgp.jpg',
         dog: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665171351/portfolio-preview/Screenshot_2022-10-07_163520_ohj04q.png',
-        tictactoe: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1668896984/portfolio-preview/ttt_screenshot_nnbxf1.png',
+        tictactoe: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679100134/portfolio-preview/ttt_screenshot_nnbxf1_nle5mv.png',
         dietmate: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679089508/portfolio-preview/dietmatelogo_s5zcwy.png',
         claritaadmin: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1678577562/portfolio-preview/clarita-logo_dt42ui.png',
     }
 
     return (
-        <div className='mb-4 flex justify-center items-center'>
+        <div className={`mb-4 flex border justify-center items-center ${image ? 'h-40' : ''}`}>
 
             <section className={`proyect-card h-16 cursor-pointer ${space || ''}`}
                 onMouseEnter={() => setHover(() => true)}
@@ -40,9 +40,8 @@ const Card = ({ title, description, space, image }) => {
             </section>
 
             {image &&
-                <div className={`card-image border ${hover ? 'h-32 filter-none' : ''}`}
-                    style={{ backgroundImage: `url(${IMG_URL[image]})` }}
-                >
+                <div className={`card-image ${hover ? 'h-32 filter-none' : ''}`}
+                    style={{ backgroundImage: `url(${IMG_URL[image]})` }}>
                     {/* {IMG[image]} */}
                 </div>}
         </div>

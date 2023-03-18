@@ -119,7 +119,8 @@
         margin-right: .5rem;
     }
     .card-image {
-        @apply h-28 w-96 ml-20 -mt-4 relative transition-all;
+        @apply h-28 ml-20 -mt-4 relative transition-all;
+        width: 450px;
         filter: grayscale(1) brightness(.5);
         transition-duration: 500ms;
         background-position: center;
