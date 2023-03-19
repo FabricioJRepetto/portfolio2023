@@ -4,14 +4,14 @@ import About from './sections/About'
 import Contact from './sections/Contact'
 import Main from './sections/Main'
 
-const Home = () => {
+const Home = ({ lang }) => {
 
     return (
         <div className='Home fade-in'>
-            <Main />
-            <About />
-            <Projects />
-            <Contact />
+            <Main lang={lang} />
+            <About lang={lang} />
+            <Projects lang={lang} />
+            <Contact lang={lang} />
         </div>
     )
 }

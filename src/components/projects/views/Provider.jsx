@@ -2,8 +2,7 @@ import React from 'react'
 import Dash from '../extras/Dash'
 import ProviderAnim from '../extras/ProviderAnim'
 
-const Provider = () => {
-    const lang = 'Es'
+const Provider = ({ lang }) => {
 
     return (
         <article className='project-page'>
@@ -20,13 +19,22 @@ const Provider = () => {
                             <p>Redux</p>
                             <p>Express</p>
                             <p>MongoDB</p>
+                            <p>SCRUM</p>
                         </div>
 
                         <p className='text-xl mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                            Proyecto grupal.<br />
-                            Ecommerce con multiples funcionalidades.<br />
-                            Diseño de UI/UX, API y base de datos.
+                            {lang === 'En'
+                                ? <>
+                                    Team project.<br />
+                                    Ecommerce with multiple functionalities.<br />
+                                    API design, data base and UI/UX.
+                                </>
+                                : <>
+                                    Proyecto grupal.<br />
+                                    Ecommerce con multiples funcionalidades.<br />
+                                    Diseño de UI/UX, API y base de datos.
+                                </>}
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
@@ -47,7 +55,7 @@ const Provider = () => {
                 </section>
             </header>
 
-            <section className='col-span-4 mb-32'>
+            <section className='col-span-4 '>
                 <h2>
                     <Dash />
                     {lang === 'En' ? 'What is Provider Store?' : '¿Qué es Provider Store?'}

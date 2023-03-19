@@ -2,9 +2,7 @@ import React from 'react'
 import Dash from '../extras/Dash'
 import { DietMateAnim } from '../extras/DietMateAnim'
 
-const DietMate = () => {
-    const lang = 'Es'
-
+const DietMate = ({ lang }) => {
     return (
         <article className='project-page'>
 
@@ -25,9 +23,17 @@ const DietMate = () => {
 
                         <p className='text-xl  mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                            Proyecto personal.<br />
-                            Aplicación organizadora de comidas, orientada a mobile.<br />
-                            Diseño de API, base de datos y UI/UX.
+                            {lang === 'En'
+                                ? <>
+                                    Personal project.<br />
+                                    Meals organizer app, oriented to mobile use .<br />
+                                    API design, database and UI/UX.
+                                </>
+                                : <>
+                                    Proyecto personal.<br />
+                                    Aplicación organizadora de comidas, orientada a mobile.<br />
+                                    Diseño de API, base de datos y UI/UX.
+                                </>}
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 

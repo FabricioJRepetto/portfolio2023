@@ -2,8 +2,7 @@ import React from 'react'
 import Dash from '../extras/Dash'
 import DogHouseAnim from '../extras/DogHouseAnim'
 
-const DogHouse = () => {
-    const lang = 'Es'
+const DogHouse = ({ lang }) => {
 
     return (
         <article className='project-page'>
@@ -24,9 +23,17 @@ const DogHouse = () => {
 
                         <p className='text-xl  mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                            Proyecto personal.<br />
-                            Consumo de APIs, uso de localStorage y base de datos SQL.<br />
-                            Diseño de API, base de datos y UI/UX.
+                            {lang === 'En'
+                                ? <>
+                                    Personal project.<br />
+                                    API consumption, SQL database and localStorage usage.<br />
+                                    API design, data base and UI/UX.
+                                </>
+                                : <>
+                                    Proyecto personal.<br />
+                                    Consumo de APIs, uso de localStorage y base de datos SQL.<br />
+                                    Diseño de API, base de datos y UI/UX.
+                                </>}
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 

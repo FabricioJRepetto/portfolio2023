@@ -2,15 +2,13 @@ import React from 'react'
 import ClaritaLogo from '../extras/ClaritaLogo'
 import Dash from '../extras/Dash'
 
-const ClaritaAdmin = () => {
-    const lang = 'Es'
-
+const ClaritaAdmin = ({ lang }) => {
     return (
         <article className='project-page'>
 
             <header className='project-header-container'>
                 <section className='project-header'>
-                    <h1>Cabañas Clarita</h1>
+                    <h1>{lang === 'En' ? 'Clarita Cabins' : 'Cabañas Clarita'}</h1>
 
                     <div>
                         <h2>{`/// SPA + RESTful API + DATABASE`}</h2>
@@ -25,9 +23,17 @@ const ClaritaAdmin = () => {
 
                         <p className='text-xl  mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                            Proyecto para cliente.<br />
-                            Sistema de gestión de un hotel.<br />
-                            Diseño de API, base de datos y UI/UX.
+                            {lang === 'En'
+                                ? <>
+                                    Client project.<br />
+                                    Hotel management system.<br />
+                                    API design, database and UI/UX.
+                                </>
+                                : <>
+                                    Proyecto para cliente.<br />
+                                    Sistema de gestión de un hotel.<br />
+                                    Diseño de API, base de datos y UI/UX.
+                                </>}
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
@@ -35,10 +41,10 @@ const ClaritaAdmin = () => {
                             <b>Web</b>
                         </a>
                         <a className='pr-8' href='https://github.com/FabricioJRepetto/clarita-frontend' target='_blank' rel='noreferrer'>
-                            <b>Repositorio [front]</b>
+                            <b>Repo. [front]</b>
                         </a>
                         <a href='https://github.com/FabricioJRepetto/clarita-backend' target='_blank' rel='noreferrer'>
-                            <b>Repositorio [back]</b>
+                            <b>Repo. [back]</b>
                         </a>
 
                     </div>
@@ -59,11 +65,11 @@ const ClaritaAdmin = () => {
                     <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                     {lang === 'En'
                         ? <>
-                            This is a project for a client, <a className='link-button' href='https://www.instagram.com/cabaniasclarita/' target='_blank' rel='noreferrer'>"Cabañas Clarita",</a>who needed a system that helps him manage his hotel facilities.<br />
+                            This is a project for a client, <a className='link-button' href='https://www.instagram.com/cabaniasclarita/' target='_blank' rel='noreferrer'>"Cabañas Clarita"</a>, who needed a system that helps him manage his hotel facilities.<br />
                             The project was designed applying SOLID principles, both in the backend and in the frontend, and allows to organize and keep record of clients, booking and finance.
                         </>
                         : <>
-                            Este pryectos es para un cliente, <a className='link-button' href='https://www.instagram.com/cabaniasclarita/' target='_blank' rel='noreferrer'>"Cabañas Clarita",</a>que necesitaba un sistema que lo ayude a administrar las instalaciones de su hotel.<br />
+                            Este pryectos es para un cliente, <a className='link-button' href='https://www.instagram.com/cabaniasclarita/' target='_blank' rel='noreferrer'>"Cabañas Clarita"</a>, que necesitaba un sistema que lo ayude a administrar las instalaciones de su hotel.<br />
                             El proyecto está diseñado aplicando los principios SOLID, tanto en el backend como en el frontend, y permite organizar y llevar registro de clientes, reservas y finanzas.
                         </>}
                     <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>

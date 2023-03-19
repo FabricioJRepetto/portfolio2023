@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Background } from './components/background/Background';
 import Home from './components/home/Home';
 import NavBar from './components/home/sections/NavBar';
+import useLang from './components/hooks/useLang';
 import useScrollReset from './components/hooks/useScrollReset';
 import ClaritaAdmin from './components/projects/views/ClaritaAdmin';
 import DietMate from './components/projects/views/DietMate';
@@ -13,26 +15,27 @@ import { Redirect } from './components/utils/Redirect';
 
 function App() {
     useScrollReset()
+    const { lang, switchLang } = useLang()
 
     return (
         <>
-            <NavBar />
-            <div className="App relative fade-in">
+            <NavBar lang={lang} switchLang={switchLang} />
 
+            <div className="App fade-in">
                 <Background />
-
                 <Routes>
                     <Route path='/' element={<Redirect />} />
-                    <Route path='/home' element={<Home />} />
+                    <Route path='/home' element={<Home lang={lang} />} />
 
                     <Route path="projects" element={<Layout />} >
                         <Route index element={<Layout />} />
-                        <Route path="doghouse" element={<DogHouse />} />
-                        <Route path="providerstore" element={<Provider />} />
-                        <Route path="tictactoe" element={<TicTacToe />} />
-                        <Route path="dietmate" element={<DietMate />} />
-                        <Route path="claritaadmin" element={<ClaritaAdmin />} />
+                        <Route path="doghouse" element={<DogHouse lang={lang} />} />
+                        <Route path="providerstore" element={<Provider lang={lang} />} />
+                        <Route path="tictactoe" element={<TicTacToe lang={lang} />} />
+                        <Route path="dietmate" element={<DietMate lang={lang} />} />
+                        <Route path="claritaadmin" element={<ClaritaAdmin lang={lang} />} />
                     </Route>
+                    <Route path='*' element={<Redirect />} />
                 </Routes>
             </div>
         </>

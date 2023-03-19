@@ -2,8 +2,7 @@ import React from 'react'
 import Dash from '../extras/Dash'
 import { TicTacToeAnim } from '../extras/TicTacToeAnim'
 
-const TicTacToe = () => {
-    const lang = 'Es'
+const TicTacToe = ({ lang }) => {
 
     return (
         <article className='project-page'>
@@ -23,9 +22,17 @@ const TicTacToe = () => {
 
                         <p className='text-xl  mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                            Proyecto personal.<br />
-                            Juego online y chat logrado con web sockets.<br />
-                            Diseño de API y UI/UX.
+                            {lang === 'En'
+                                ? <>
+                                    Personal project.<br />
+                                    Online game and chat achieved with web sockets.<br />
+                                    API design and UI/UX.
+                                </>
+                                : <>
+                                    Proyecto personal.<br />
+                                    Juego online y chat logrado con web sockets.<br />
+                                    Diseño de API y UI/UX.
+                                </>}
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 

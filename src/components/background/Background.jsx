@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import CodeBg from './CodeBg'
-import { HOME_CODE } from "../../constants";
 import { Svg } from './Svg'
+import useCode from '../hooks/useCode';
+// import { useParallax } from '../hooks/useParallax';
 
 export const Background = () => {
     const [angle, setAngle] = useState(false)
+    const { CODE } = useCode()
+    // const { scroll } = useParallax()
 
     setTimeout(() => {
         setAngle(true)
@@ -13,11 +16,16 @@ export const Background = () => {
     return (
         <div className='fade-in relative'>
             <div className='absolute inset-0'>
-                <Svg />
+                <div className='transition-transform duration-75'
+                //  style={{ transform: `translateY(${scroll || 0}px)` }}
+                >
+                    <Svg />
+                </div>
+
                 <div className='absolute h-screen top-0 left-2/3'>
-                    <CodeBg text={HOME_CODE} id='main' angle={angle} loadingAnim />
+                    <CodeBg text={CODE} id='main' angle={angle} loadingAnim />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

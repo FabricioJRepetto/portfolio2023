@@ -6,7 +6,7 @@ import GitHubChart from '../common/GitHubChart'
 import useObserver from '../hooks/useObserver'
 import Card from './Card'
 
-const Projects = () => {
+const Projects = ({ lang }) => {
     const ref = useRef(null)
     const navigate = useNavigate()
     const { isVisible } = useObserver(ref)
@@ -14,19 +14,25 @@ const Projects = () => {
     return (
         <section ref={ref} id='projects-section' className={`min-h-screen pt-40 mb-2 items-center relative ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
             <article className='h-fit col-span-7 flex flex-col z-10'>
-                <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Proyectos</h2>
+                <h2 className={`text-white font-bold tracking-tighter text-8xl mb-8`}>{lang === 'En' ? 'Projects' : 'Proyectos'}</h2>
 
                 <div className="w-10/12 self-center flex flex-col items-center">
                     <label onClick={() => navigate('/projects/claritaadmin')}>
-                        <Card title='Cabañas Clarita' description='Sistema de gestión' image='claritaadmin' tags={['React', 'Express', 'MongoDB']} />
+                        <Card title={lang === 'En' ? 'Clarita Cabins' : 'Cabañas Clarita'}
+                            description={lang === 'En' ? 'Management system' : 'Sistema de gestión'}
+                            image='claritaadmin' tags={['React', 'Express', 'MongoDB']} />
                     </label>
 
                     <label onClick={() => navigate('/projects/dietmate')}>
-                        <Card title='Diet Mate' description='Organizador de comidas' image='dietmate' tags={['React', 'Express', 'MongoDB']} place='10' />
+                        <Card title='Diet Mate'
+                            description={lang === 'En' ? 'Meals organizer' : 'Organizador de comidas'}
+                            image='dietmate' tags={['React', 'Express', 'MongoDB']} place='10' />
                     </label>
 
                     <label onClick={() => navigate('/projects/tictactoe')}>
-                        <Card title='TicTacToe' description='Juego online' image='tictactoe' tags={['React', 'Express', 'WebSocket']} place='-10' />
+                        <Card title='TicTacToe Io'
+                            description={lang === 'En' ? 'Online game' : 'Juego online'}
+                            image='tictactoe' tags={['React', 'Express', 'WebSocket']} place='-10' />
                     </label>
 
                     <label onClick={() => navigate('/projects/providerstore')}>
@@ -34,15 +40,17 @@ const Projects = () => {
                     </label>
 
                     <label onClick={() => navigate('/projects/doghouse')}>
-                        <Card title='Dog House' description='Colección de perros' image='dog' tags={['React', 'Redux', 'Express', 'PostgreSQL']} place='-10' />
+                        <Card title='Dog House'
+                            description={lang === 'En' ? 'Dogs collection' : 'Colección de perros'}
+                            image='dog' tags={['React', 'Redux', 'Express', 'PostgreSQL']} place='-10' />
                     </label>
                 </div>
 
-                <h2 className="font-bold tracking-tighter text-4xl mt-32 mb-8">En desarrollo...</h2>
+                <h2 className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Coming soon...' : 'Próximamente...'}</h2>
 
                 <div className="pl-40 w-3/4">
                     <label onClick={() => null}>
-                        <Card title='Image Mutator' description='Manipulación de imágenes' />
+                        <Card title='Image Mutator' description={lang === 'En' ? 'Image manipulation' : 'Manipulación de imágenes'} />
                     </label>
                 </div>
 

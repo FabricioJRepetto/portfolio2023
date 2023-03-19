@@ -10,12 +10,6 @@ const Card = ({ title, description, place, image, tags }) => {
         dietmate: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679089508/portfolio-preview/dietmatelogo_s5zcwy.png',
         claritaadmin: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1678577562/portfolio-preview/clarita-logo_dt42ui.png',
     }
-    const borderColor = [
-        'border-sky-500',
-        'border-rose-500',
-        'border-orange-500',
-        'border-emerald-500',
-    ]
 
     return (
         <div onMouseEnter={() => setHover(() => true)}
@@ -23,7 +17,7 @@ const Card = ({ title, description, place, image, tags }) => {
             className={`card-container ${image ? 'h-40' : ''}`}
             style={place ? { marginLeft: `${place}%` } : {}}>
 
-            <section className={`proyect-card h-16`}>
+            <section className={`proyect-card h-16 min-w-fit`}>
                 <span className={`proyect-card-title ${hover ? '' : ''}`}>
                     <span className={`mr-2 ${hover ? 'text-sky-500' : ''}`}>/</span>
                     <span className={`${hover ? 'text-rose-500' : ''}`}>/</span>
@@ -32,7 +26,7 @@ const Card = ({ title, description, place, image, tags }) => {
                     <p className={`${hover ? 'text-white' : ''}`}>{title}</p>
                 </span>
 
-                <p className={`pl-14 ml-1 h-6 min-w-fit ${hover ? 'opacity-100' : 'opacity-0'} overflow-x-visible whitespace-nowrap `}>
+                <p className={`pl-14 ml-1 h-6  text-emerald-600 ${hover ? 'opacity-100 text-white' : 'opacity-0'} overflow-x-visible whitespace-nowrap `}>
                     <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                     {description}
                     <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
@@ -47,11 +41,11 @@ const Card = ({ title, description, place, image, tags }) => {
                 </div>}
 
             {tags &&
-                <div className={`h-fit ml-4 mb-4 grid grid-flow-col grid-rows-4 gap-2 relative`}>
+                <div className={`card-tags-container`}>
                     <div className={`hologram-dots transition-opacity duration-700 ${hover ? 'opacity-0' : 'opacity-1'} top-0 left-0 aspect-square`}></div>
                     {tags.map((t, i) => (
                         <p key={t + i} style={{ transitionDelay: `${i * 75}ms` }}
-                            className={`card-tags ${hover ? 'opacity-1' : 'opacity-0'} ${borderColor[i % 4]}`}>
+                            className={`card-tags ${hover ? 'opacity-1' : 'opacity-0'} `}>
                             {t}
                         </p>
                     ))}
