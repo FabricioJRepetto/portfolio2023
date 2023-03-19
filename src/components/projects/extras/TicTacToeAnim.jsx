@@ -134,22 +134,22 @@ export const TicTacToeAnim = ({ logged = false }) => {
                     }} ></div>}
                 </div>
 
-                <div className={`board`}>
-                    <div>{
+                <div className={`board grid grid-cols-3`}>
+                    <>{
                         row0.map((tile, i) => (
                             <div key={'r0' + i} id={'r0' + i} className={`tile ${tile && 'tile-mark-anim'} ${complete && 'logo-font-size'}`}>{tile}</div>
                         ))
-                    }</div>
-                    <div>{
+                    }</>
+                    <>{
                         row1.map((tile, i) => (
                             <div key={'r1' + i} id={'r1' + i} className={`tile ${tile && 'tile-mark-anim'} ${complete && 'logo-font-size'}`}>{tile}</div>
                         ))
-                    }</div>
-                    <div>{
+                    }</>
+                    <>{
                         row2.map((tile, i) => (
                             <div key={'r2' + i} id={'r2' + i} className={`tile ${tile && 'tile-mark-anim'} ${complete && 'logo-font-size'}`}>{tile}</div>
                         ))
-                    }</div>
+                    }</>
                 </div>
             </div>
         </div>

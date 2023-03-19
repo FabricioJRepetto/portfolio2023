@@ -1,15 +1,8 @@
 import React, { useState } from 'react'
 
-const Card = ({ title, description, space, image }) => {
+const Card = ({ title, description, place, image, tags }) => {
     const [hover, setHover] = useState(false)
 
-    const IMG = {
-        provider: <img src='https://res.cloudinary.com/dsyjj0sch/image/upload/v1679087971/portfolio-preview/slider-0_idihgp.jpg' alt='provider' />,
-        dog: <img src='https://res.cloudinary.com/dsyjj0sch/image/upload/v1665171351/portfolio-preview/Screenshot_2022-10-07_163520_ohj04q.png' alt='doghouse' />,
-        tictactoe: <img src='https://res.cloudinary.com/dsyjj0sch/image/upload/v1668896984/portfolio-preview/ttt_screenshot_nnbxf1.png' alt='tictactoe' />,
-        dietmate: <img src='https://res.cloudinary.com/dsyjj0sch/image/upload/v1679089508/portfolio-preview/dietmatelogo_s5zcwy.png' alt='dietmate' />,
-        claritaadmin: <img src='https://res.cloudinary.com/dsyjj0sch/image/upload/v1678577562/portfolio-preview/clarita-logo_dt42ui.png' alt='claritaadmin' />,
-    }
     const IMG_URL = {
         provider: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679087971/portfolio-preview/slider-0_idihgp.jpg',
         dog: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665171351/portfolio-preview/Screenshot_2022-10-07_163520_ohj04q.png',
@@ -17,13 +10,20 @@ const Card = ({ title, description, space, image }) => {
         dietmate: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679089508/portfolio-preview/dietmatelogo_s5zcwy.png',
         claritaadmin: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1678577562/portfolio-preview/clarita-logo_dt42ui.png',
     }
+    const borderColor = [
+        'border-sky-500',
+        'border-rose-500',
+        'border-orange-500',
+        'border-emerald-500',
+    ]
 
     return (
-        <div className={`mb-4 flex border justify-center items-center ${image ? 'h-40' : ''}`}>
+        <div onMouseEnter={() => setHover(() => true)}
+            onMouseLeave={() => setHover(() => false)}
+            className={`card-container ${image ? 'h-40' : ''}`}
+            style={place ? { marginLeft: `${place}%` } : {}}>
 
-            <section className={`proyect-card h-16 cursor-pointer ${space || ''}`}
-                onMouseEnter={() => setHover(() => true)}
-                onMouseLeave={() => setHover(() => false)}>
+            <section className={`proyect-card h-16`}>
                 <span className={`proyect-card-title ${hover ? '' : ''}`}>
                     <span className={`mr-2 ${hover ? 'text-sky-500' : ''}`}>/</span>
                     <span className={`${hover ? 'text-rose-500' : ''}`}>/</span>
@@ -40,10 +40,23 @@ const Card = ({ title, description, space, image }) => {
             </section>
 
             {image &&
-                <div className={`card-image ${hover ? 'h-32 filter-none' : ''}`}
-                    style={{ backgroundImage: `url(${IMG_URL[image]})` }}>
-                    {/* {IMG[image]} */}
+                <div className='relative'>
+                    <div className={`card-image ${hover ? 'h-32 filter-none ml-12' : ''}`}
+                        style={{ backgroundImage: `url(${IMG_URL[image]})` }}>
+                    </div>
                 </div>}
+
+            {tags &&
+                <div className={`h-fit ml-4 mb-4 grid grid-flow-col grid-rows-4 gap-2 relative`}>
+                    <div className={`hologram-dots transition-opacity duration-700 ${hover ? 'opacity-0' : 'opacity-1'} top-0 left-0 aspect-square`}></div>
+                    {tags.map((t, i) => (
+                        <p key={t + i} style={{ transitionDelay: `${i * 75}ms` }}
+                            className={`card-tags ${hover ? 'opacity-1' : 'opacity-0'} ${borderColor[i % 4]}`}>
+                            {t}
+                        </p>
+                    ))}
+                </div>}
+
         </div>
     )
 }

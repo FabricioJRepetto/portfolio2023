@@ -23,6 +23,7 @@
     a {
     font-weight: 500;
     text-decoration: inherit;
+    color: rgb(16, 185, 129);
     }
     a:hover {
     color: #fff;
@@ -78,6 +79,40 @@
         max-width: 100vw;
         background-size: 100%;
     }
+    .nav-bar {
+        @apply flex justify-between py-4 m-auto;
+        width: calc(80vw);
+    }
+    .nav-bar > p {
+        @apply text-lg;
+    }
+    .nav-bar > p,
+    .nav-bar span {
+        @apply cursor-pointer;
+    }
+    .nav-bar span {
+        @apply flex items-center gap-1;
+    }
+    .nav-bar span > p {
+        @apply opacity-0 transition-opacity duration-300 inline;
+    }
+
+    .nav-bar span:hover > p {
+        @apply opacity-100;
+    }
+    .nav-back {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(22, 22, 22, .5);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        z-index: -1;
+    }
+
+    .Home > section {
+        @apply grid grid-cols-7 pl-32;
+    }
 
     .innerLine {
         stroke-dasharray: 3700;
@@ -105,6 +140,10 @@
         animation: linegrow .4s 4.2s linear forwards;
     }
 
+    .card-container {
+        @apply mb-4 flex justify-between items-center cursor-pointer;
+        width: fit-content;
+    }
     .proyect-card > * {
         transition: opacity 100ms ease-in;
     }
@@ -119,25 +158,32 @@
         margin-right: .5rem;
     }
     .card-image {
-        @apply h-28 ml-20 -mt-4 relative transition-all;
+        @apply h-28 ml-10 -mt-4 relative;
         width: 450px;
         filter: grayscale(1) brightness(.5);
-        transition-duration: 500ms;
+        transition: all 300ms ease-in;
         background-position: center;
-        background-size: cover;
+        background-size: 100%;
     }
+    .card-image-zoom {
+        margin-left: 3rem
+    }
+    .card-tags {
+        @apply transition-opacity border duration-700 px-2 rounded-lg w-fit h-fit ;
+    }
+
     .provider-glitch {
         position: absolute;
-        height: 100%;
-        width: 100%;
-        /* aspect-ratio: 4/1; */
+        top: 40%;
+        height: 30%;
+        width: 30%;
         background: center / contain no-repeat url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1659650791/PROVIDER_LOGO_glitch_aberration_kt2hyv.png');
     }
     .doghouse-logo {
         position: absolute;
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
+        height: 60%;
+        width: 60%;
+        margin-top: -7rem;
     }
     .doghouse-logo * {        
         position: absolute;
@@ -147,11 +193,7 @@
     .doghouse-logo img {        
         animation: dogspin infinite 130s linear;
     }
-
-    .Home > section {
-        @apply grid grid-cols-7 pl-32;
-    }
-
+    
     .blue {
         @apply text-sky-500;
     }
@@ -204,7 +246,7 @@
     }
     .hologram-dots {
         position: absolute;
-        inset: 0;
+        /* inset: 0; */
         z-index: 3;
         background: radial-gradient(
             rgba(28, 241, 166, 0.5) 5%, transparent 2%
@@ -263,6 +305,13 @@
         left: 0;
         transform: translateY(-50%);
     }
+    .contact-hand {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
     .contact-holo {
         @apply relative font-light text-transparent bg-gradient-to-b from-transparent via-emerald-700 to-emerald-500 bg-clip-text animate-pulse;
         
@@ -279,10 +328,10 @@
     }    
 
     .contact-section {
-        height: 80vh;
+        height: 90vh;
     }
     .footer {
-        height: 20vh;
+        @apply flex justify-end items-end col-span-7 gap-8 text-emerald-600 mr-16;
     }
 
     .fade-in {
@@ -298,9 +347,85 @@
     }
     .fade-out {
         @apply transition-all;
-        opacity: 0;
         animation: .3s fadeout ease forwards;
     }
+    .scroll-fade-in {
+        opacity: 0;
+        animation: .75s scrollfadein ease-in forwards;
+    }
+
+    .project-page {
+        @apply grid grid-cols-7 px-32 pt-20 pb-40 min-h-screen gap-32 relative;
+    }
+
+    .project-header-container {
+        @apply col-span-7 relative grid grid-cols-2 items-center;
+        min-height: calc(100vh / 2)
+    }
+    .project-logo {
+        @apply m-auto h-fit w-96;
+    }
+
+    .project-header h1 {
+        @apply text-white font-bold tracking-tighter text-8xl mb-1;
+    }
+    .project-header > div {
+        @apply pl-40;
+    }
+    .project-header h2 {
+        @apply text-2xl font-bold mb-2;
+    }
+    .project-header > div > div {
+        @apply header-tags;
+    }
+
+    .header-tags {
+        @apply w-fit mb-8 flex gap-2;
+    }
+    .header-tags > p {
+        @apply card-tags;
+    }
+    .header-tags > p:nth-child(4n) {
+        @apply border-emerald-500;
+    }
+    .header-tags > p:nth-child(4n -1) {
+        @apply border-rose-500;
+    }
+    .header-tags > p:nth-child(4n -2) {
+        @apply border-orange-500;
+    }
+    .header-tags > p:nth-child(4n -3) {
+        @apply border-sky-500;
+    }
+
+    .project-page > section {
+        @apply pl-2 text-white;
+    }
+    .project-page > section > h2 {
+        @apply text-4xl font-bold -ml-2 mb-8;
+    }
+    .project-page > section > p {
+        @apply px-10 text-xl;
+    }
+    .project-page > img {
+        @apply col-span-3 h-auto w-full m-auto drop-shadow-xl;
+    }
+    .project-vertical-image {
+        @apply col-span-3 relative flex justify-center;
+        height: 500px;
+    }
+    .project-vertical-image > img {
+        @apply col-span-3 absolute drop-shadow-xl;
+        max-height: 100%;        
+    }
+
+    .project-page-bg-top {
+        @apply absolute inset-0 h-screen w-screen bg-gradient-to-bl from-emerald-900/20 via-transparent -z-10;
+    }
+    .project-page-bg-bot {
+        @apply absolute bottom-0 left-0 h-screen w-screen bg-gradient-to-tr from-emerald-900/20 via-transparent -z-10;
+    }
+    
 }
 
 @keyframes linegrow {
@@ -325,6 +450,11 @@
 @keyframes fadeout {
     to {
         opacity: 0;
+    }
+}
+@keyframes scrollfadein {    
+    to {
+        opacity: 1;
     }
 }
 

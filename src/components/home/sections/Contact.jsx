@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { EMAIL, GITHUB, LINKEDIN, RESUME } from '../../../constants'
 import Card from '../../projects/Card'
-import GitHubChart from "../../common/GitHubChart";
 import ContactHolo from '../../utils/ContactHolo';
+import ContactHand from '../../utils/ContactHand';
+import useObserver from '../../hooks/useObserver';
 
 const Contact = () => {
     const [selected, setSelected] = useState(null)
+    const ref = useRef(null)
+    const { isVisible } = useObserver(ref)
 
     const text = {
         git: GITHUB,
@@ -15,9 +18,9 @@ const Contact = () => {
     }
 
     return (
-        <>
+        <section id='contact-section' className={`min-h-screen contact-section items-center pt-52 bg-gradient-to-br from-transparent via-transparent to-emerald-900/10 ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
             <article className='h-fit col-span-4 flex flex-col'>
-                <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Conectemos</h2>
+                <h2 ref={ref} className="text-white font-bold tracking-tighter text-8xl mb-8">Conectemos!</h2>
 
                 <div className='ml-40 w-fit'>
                     <a href='https://www.linkedin.com/in/fabricio-repetto/' target='_bank'
@@ -52,12 +55,22 @@ const Contact = () => {
                         <ContactHolo text={text[selected]} />
                     </div>}
 
-                <div className={`${selected ? 'fade-out angle' : 'x-fade-in'} relative top-1/2 `}>
-                    <GitHubChart />
-                    {/* <p className="absolute inset-0 text-8xl font-bold mb-8">Saludame!</p> */}
+                <div className={`contact-hand ${selected ? 'fade-out' : 'x-fade-in'} `}>
+                    {isVisible && <ContactHand />}
                 </div>
             </article>
-        </>
+
+            <div className='footer'>
+                <p>Sobre esta página:</p>
+                <a href='https://fabricio-repetto.vercel.app'>
+                    <b>V1</b>
+                </a>
+
+                <a href='https://github.com/FabricioJRepetto/portfolio2023' target='_blank' rel='noreferrer'>
+                    <b>Repositorio</b>
+                </a>
+            </div>
+        </section>
     )
 }
 

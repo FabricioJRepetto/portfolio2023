@@ -74,7 +74,7 @@ const GitHubChart = () => {
     }
 
     return (
-        <div className='relative animate-pulse'>
+        <div className={`relative animate-pulse`}>
             {!!data?.days?.length &&
                 <div className='days-grid absolute top-0 right-0'>
                     {

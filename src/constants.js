@@ -20,21 +20,26 @@ const PROYECTS_CODE =
                 Proyectos
             </h1>
             <p className="px-2 uppercase text-lg">
-                < Dog House />
-            </p>
-            <p className="px-2 uppercase text-lg">
-                < Provider Store />
-            </p>
-            <p className="px-2 uppercase text-lg">
-                < TicTacToe Io />
+                < Cabañas Clarita />
             </p>
             <p className="px-2 uppercase text-lg">
                 < Diet Mate />
             </p>
             <p className="px-2 uppercase text-lg">
-                < Cabañas Clarita />
+                < TicTacToe Io />
             </p>
+            <p className="px-2 uppercase text-lg">
+                < Provider Store />
+            </p>
+            <p className="px-2 uppercase text-lg">
+                < Dog House />
+            </p>
+
+            <p className="px-2 uppercase text-lg">
+                { !isLoading && < Image Mutator /> }
+            </p>            
         </section>
+        <div>
                 < CodeBg />
         </div>
     )
@@ -144,6 +149,60 @@ const RESUME =
      @@@@@@@@@@@@@@@     
        @@@@@@@@@@@@      
          @@@@@@@@ `
+const HAND_1 =
+    `                          
+                          
+                          
+      @   (@              
+     @@@  @@              
+      @@  @@@             
+      @@@ @@@             
+  @@  @@@  @@             
+  @@@  @@@ @@@            
+   @@: @@@ @@@     @@     
+   @@@ %@@:@@@    @@@     
+    @@@ @@@ @@@   @@      
+ @  @@@ @@@@@@@  @@@      
+ @@  @@@ @@@@@@@ @@@      
+ @@@ @@@@@@@@@@@@@@@      
+  @@@@@@@@@@@@@@@@@       
+   @@@@@@@@@@@@@@@@       
+   %@@@@@@@@@@@@@@@       
+    @@@@@@@@@@@@@@@       
+     @@@@@@@@@@@@@@       
+     %@@@@@@@@@@@@@       
+      @@@@@@@@@@@@        
+       @@@@@@@@@@@        
+        @@@@@@@@@         
+         @@@@@@           
+          --              `
+const HAND_2 =
+    `                          
+                          
+                          
+              @   =@      
+             @@   @@      
+             @@  @@@      
+        +@  @@@  @@@      
+        @@  @@@ @@@  @@   
+        @@  @@  @@@ @@@   
+        @@ @@@ @@@  @@@   
+        @@ @@@ @@@ @@@    
+       $@@@@@@@@@ *@@@    
+       @@@@@@@@@@ @@@     
+       @@@@@@@@@@@@@@     
+       @@@@@@@@@@@@@      
+       @@@@@@@@@@@@$      
+      @@@@@@@@@@@@@       
+      @@@@@@@@@@@@@  @@@@&
+      @@@@@@@@@@@@@@@@@@@ 
+      @@@@@@@@@@@@@@@@@:  
+      @@@@@@@@@@@@@@@@    
+      @@@@@@@@@@@@@@      
+       @@@@@@@@@@@        
+        @@@@@@@@@         
+          "@@@@           
+                          `
 
 export {
     HOME_CODE,
@@ -151,5 +210,7 @@ export {
     GITHUB,
     LINKEDIN,
     EMAIL,
-    RESUME
+    RESUME,
+    HAND_1,
+    HAND_2
 }

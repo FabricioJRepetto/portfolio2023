@@ -110,8 +110,7 @@
 }
 
 .board {
-    width: fit-content;
-    display: flex;
+    width: 30rem;
     text-align: center;
 }
 
@@ -126,11 +125,11 @@
 }
 
 .tile-mark-anim {
-    font-size: 8rem;
+    font-size: 7rem;
     transition: font-size .3s cubic-bezier(.39, 1.59, .51, .8);
 }
 
 .logo-font-size {
-    font-size: 13rem;
+    font-size: 12rem;
     transition: color .3s ease, font-size .3s cubic-bezier(.39, 1.59, .51, .8);
 }

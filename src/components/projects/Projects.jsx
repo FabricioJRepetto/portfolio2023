@@ -1,44 +1,44 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PROYECTS_CODE } from '../../constants'
 import CodeBg from '../background/CodeBg'
+import GitHubChart from '../common/GitHubChart'
+import useObserver from '../hooks/useObserver'
 import Card from './Card'
 
 const Projects = () => {
+    const ref = useRef(null)
     const navigate = useNavigate()
-    const [selected, setSelected] = useState(false)
-
-    const projects = [
-    ]
+    const { isVisible } = useObserver(ref)
 
     return (
-        <>
-            <article className='h-fit col-span-7 flex flex-col'>
-                <h2 className="text-white font-bold tracking-tighter text-8xl mb-16">Proyectos</h2>
+        <section ref={ref} id='projects-section' className={`min-h-screen pt-40 mb-2 items-center relative ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
+            <article className='h-fit col-span-7 flex flex-col z-10'>
+                <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">Proyectos</h2>
 
-                <div className="w-fit self-center z-10">
+                <div className="w-10/12 self-center flex flex-col items-center">
                     <label onClick={() => navigate('/projects/claritaadmin')}>
-                        <Card title='Cabañas Clarita' description='Sistema de gestión' image='claritaadmin' />
+                        <Card title='Cabañas Clarita' description='Sistema de gestión' image='claritaadmin' tags={['React', 'Express', 'MongoDB']} />
                     </label>
 
                     <label onClick={() => navigate('/projects/dietmate')}>
-                        <Card title='Diet Mate' description='Organizador de comidas' image='dietmate' />
+                        <Card title='Diet Mate' description='Organizador de comidas' image='dietmate' tags={['React', 'Express', 'MongoDB']} place='10' />
                     </label>
 
                     <label onClick={() => navigate('/projects/tictactoe')}>
-                        <Card title='TicTacToe' description='Juego online' image='tictactoe' />
+                        <Card title='TicTacToe' description='Juego online' image='tictactoe' tags={['React', 'Express', 'WebSocket']} place='-10' />
                     </label>
 
                     <label onClick={() => navigate('/projects/providerstore')}>
-                        <Card title='Provider Store' description='Ecommerce' image='provider' />
+                        <Card title='Provider Store' description='Ecommerce' image='provider' tags={['React', 'Redux', 'Express', 'MongoDB']} />
                     </label>
 
                     <label onClick={() => navigate('/projects/doghouse')}>
-                        <Card title='Dog House' description='Colección de perros' image='dog' />
+                        <Card title='Dog House' description='Colección de perros' image='dog' tags={['React', 'Redux', 'Express', 'PostgreSQL']} place='-10' />
                     </label>
                 </div>
 
-                <h2 className="font-bold tracking-tighter text-4xl my-8">En desarrollo...</h2>
+                <h2 className="font-bold tracking-tighter text-4xl mt-32 mb-8">En desarrollo...</h2>
 
                 <div className="pl-40 w-3/4">
                     <label onClick={() => null}>
@@ -48,14 +48,14 @@ const Projects = () => {
 
             </article>
 
-            {/* <article className='col-span-4 flex flex-col gap-8 pt-28 border'>
-                
-            </article> */}
-
-            <div className='absolute left-2/3 top-0 h-full'>
-                <CodeBg text={PROYECTS_CODE} id='proyects' loadingAnim />
+            <div className='absolute left-0 top-0 h-full opacity-30'>
+                {isVisible && <CodeBg text={PROYECTS_CODE} id='proyects' loadingAnim />}
             </div>
-        </>
+
+            <div className={`absolute bottom-32 right-8`}>
+                <GitHubChart />
+            </div>
+        </section>
     )
 }
 
