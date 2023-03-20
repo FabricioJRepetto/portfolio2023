@@ -54,7 +54,7 @@ const About = ({ lang }) => {
                 <p>Git</p>
                 <p>SCRUM</p>
                 <p>SOLID</p>
-                <p>TailWind</p>
+                <p>Tailwind</p>
                 <p>Photoshop</p>
                 <p>Illustrator</p>
             </div>

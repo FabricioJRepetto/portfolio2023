@@ -63,7 +63,7 @@ const Contact = ({ lang }) => {
 
             <div className='footer'>
                 <p>{lang === 'En' ? 'About this web' : 'Sobre esta página:'}</p>
-                <a href='https://fabricio-repetto.vercel.app'>
+                <a href='https://fabricio-repetto-v1.vercel.app'>
                     <b>V1</b>
                 </a>
 
