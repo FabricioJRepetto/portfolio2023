@@ -1,8 +1,11 @@
 import React from 'react'
+import { isMobile } from '../../utils/isMobile'
 import Dash from '../extras/Dash'
 import { DietMateAnim } from '../extras/DietMateAnim'
 
 const DietMate = ({ lang }) => {
+    const mobile = isMobile()
+
     return (
         <article className='project-page'>
 
@@ -37,13 +40,13 @@ const DietMate = ({ lang }) => {
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
-                        <a className='pr-8' href='https://weekly-diet.vercel.app' target='_blank' rel='noreferrer'>
+                        <a href='https://weekly-diet.vercel.app' target='_blank' rel='noreferrer'>
                             <b>Web</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/weekly-diet' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/weekly-diet' target='_blank' rel='noreferrer'>
                             <b>Repo. [front]</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/weekly-diet-backend' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/weekly-diet-backend' target='_blank' rel='noreferrer'>
                             <b>Repo. [back]</b>
                         </a>
 
@@ -51,7 +54,7 @@ const DietMate = ({ lang }) => {
                 </section>
 
                 <section className='project-logo'>
-                    <DietMateAnim />
+                    {!mobile && <DietMateAnim />}
                 </section>
             </header>
 

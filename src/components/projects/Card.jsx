@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { isMobile } from '../utils/isMobile'
 
-const Card = ({ title, description, place, image, tags }) => {
+const Card = ({ title, description, place, image, tags, bigMargin }) => {
     const [hover, setHover] = useState(false)
+    const mobile = isMobile()
 
     const IMG_URL = {
         provider: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679087971/portfolio-preview/slider-0_idihgp.jpg',
@@ -14,8 +16,9 @@ const Card = ({ title, description, place, image, tags }) => {
     return (
         <div onMouseEnter={() => setHover(() => true)}
             onMouseLeave={() => setHover(() => false)}
-            className={`card-container ${image ? 'h-40' : ''}`}
-            style={place ? { marginLeft: `${place}%` } : {}}>
+            className={`card-container ${image ? 'h-40' : ''} ${(bigMargin && mobile) ? 'mb-16' : ''}`}
+            style={(place && !mobile) ? { marginLeft: `${place}%` } : {}}
+        >
 
             <section className={`proyect-card h-16 min-w-fit`}>
                 <span className={`proyect-card-title ${hover ? '' : ''}`}>
@@ -26,7 +29,7 @@ const Card = ({ title, description, place, image, tags }) => {
                     <p className={`${hover ? 'text-white' : ''}`}>{title}</p>
                 </span>
 
-                <p className={`pl-14 ml-1 h-6  text-emerald-600 ${hover ? 'opacity-100 text-white' : 'opacity-0'} overflow-x-visible whitespace-nowrap `}>
+                <p className={`pl-14 ml-1 h-6 text-emerald-600 ${(hover || mobile) ? 'opacity-100 text-white' : 'opacity-0'} overflow-x-visible whitespace-nowrap `}>
                     <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                     {description}
                     <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
@@ -41,11 +44,11 @@ const Card = ({ title, description, place, image, tags }) => {
                 </div>}
 
             {tags &&
-                <div className={`card-tags-container`}>
-                    <div className={`hologram-dots transition-opacity duration-700 ${hover ? 'opacity-0' : 'opacity-1'} top-0 left-0 aspect-square`}></div>
+                <div className={`hidden md:card-tags-container`}>
+                    <div className={`hologram-dots transition-opacity duration-700 ${hover ? 'opacity-0' : 'opacity-100'} top-0 left-0 aspect-square`}></div>
                     {tags.map((t, i) => (
                         <p key={t + i} style={{ transitionDelay: `${i * 75}ms` }}
-                            className={`card-tags ${hover ? 'opacity-1' : 'opacity-0'} `}>
+                            className={`card-tags ${hover ? 'opacity-100' : 'opacity-0'} `}>
                             {t}
                         </p>
                     ))}

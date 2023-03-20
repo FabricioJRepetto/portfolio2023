@@ -1,8 +1,10 @@
 import React from 'react'
+import { isMobile } from '../../utils/isMobile'
 import Dash from '../extras/Dash'
 import DogHouseAnim from '../extras/DogHouseAnim'
 
 const DogHouse = ({ lang }) => {
+    const mobile = isMobile()
 
     return (
         <article className='project-page'>
@@ -37,10 +39,10 @@ const DogHouse = ({ lang }) => {
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
-                        <a className='pr-8' href='https://the-dog-house.vercel.app' target='_blank' rel='noreferrer'>
+                        <a href='https://the-dog-house.vercel.app' target='_blank' rel='noreferrer'>
                             <b>Web</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/ProyectoDogs' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/ProyectoDogs' target='_blank' rel='noreferrer'>
                             <b>Repo. [front+back]</b>
                         </a>
 
@@ -48,7 +50,7 @@ const DogHouse = ({ lang }) => {
                 </section>
 
                 <section className='project-logo'>
-                    <DogHouseAnim />
+                    {!mobile && <DogHouseAnim />}
                 </section>
             </header>
 

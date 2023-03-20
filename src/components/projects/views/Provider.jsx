@@ -1,8 +1,10 @@
 import React from 'react'
+import { isMobile } from '../../utils/isMobile'
 import Dash from '../extras/Dash'
 import ProviderAnim from '../extras/ProviderAnim'
 
 const Provider = ({ lang }) => {
+    const mobile = isMobile()
 
     return (
         <article className='project-page'>
@@ -38,10 +40,10 @@ const Provider = ({ lang }) => {
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
-                        <a className='pr-8' href='https://providerstore.vercel.app' target='_blank' rel='noreferrer'>
+                        <a href='https://providerstore.vercel.app' target='_blank' rel='noreferrer'>
                             <b>Web</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/Ecommerce' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/Ecommerce' target='_blank' rel='noreferrer'>
                             <b>Repo. [front]</b>
                         </a>
                         <a href='https://github.com/fereramirez/provider-backend' target='_blank' rel='noreferrer'>
@@ -51,7 +53,7 @@ const Provider = ({ lang }) => {
                 </section>
 
                 <section className='project-logo'>
-                    <ProviderAnim />
+                    {!mobile && <ProviderAnim />}
                 </section>
             </header>
 

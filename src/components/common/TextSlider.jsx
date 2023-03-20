@@ -12,7 +12,7 @@ const TextSlider = ({ text }) => {
     //: TODO: dejar de renderizar on blur
 
     return (
-        <div className='relative mr-16'>
+        <div className='relative mr-16 mt-16 md:mt-0 h-16'>
             <div className='slider-circles'>
                 <div className='border-orange-500'></div>
                 <div style={{ animationDelay: '300ms' }} className='border-sky-500'></div>

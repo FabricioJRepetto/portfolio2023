@@ -19,10 +19,10 @@ const Contact = ({ lang }) => {
 
     return (
         <section id='contact-section' className={`min-h-screen contact-section items-center pt-52 bg-gradient-to-br from-transparent via-transparent to-emerald-900/10 ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
-            <article className='h-fit col-span-4 flex flex-col'>
+            <article className='h-fit col-span-4 flex flex-col mb-16 md:mb-16'>
                 <h2 ref={ref} className="text-white font-bold tracking-tighter text-8xl mb-8">{lang === 'En' ? `Let's Connect!` : 'Conectemos!'}</h2>
 
-                <div className='ml-40 w-fit'>
+                <div className='md:ml-40 w-fit'>
                     <a href='https://www.linkedin.com/in/fabricio-repetto/' target='_bank'
                         onMouseEnter={() => setSelected(() => 'link')}
                         onMouseLeave={() => setSelected(() => null)}>

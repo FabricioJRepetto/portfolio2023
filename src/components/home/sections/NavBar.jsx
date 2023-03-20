@@ -2,12 +2,14 @@ import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import useScroll from '../../hooks/useScroll'
 import Dash from '../../projects/extras/Dash'
+import { isMobile } from '../../utils/isMobile'
 import { toSection } from '../../utils/scrollTo'
 
 const NavBar = ({ lang, switchLang }) => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
     const { blur } = useScroll()
+    const mobile = isMobile()
 
     const home = () => {
         if (pathname === '/home') {
@@ -20,10 +22,10 @@ const NavBar = ({ lang, switchLang }) => {
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 ${pathname !== '/' ? '' : 'hidden'}`}>
             <nav className='nav-bar'>
-                <div onClick={home}><b>FR</b> <Dash />{` web developer`}</div>
+                <div onClick={home} ><b>FR</b> <Dash /><p className='hidden md:inline-flex'>{` web developer`}</p></div>
 
-                <div className='flex gap-6 fade-in'>
-                    {pathname === '/home' &&
+                <div className='flex md:gap-6 fade-in'>
+                    {(pathname === '/home' && !mobile) &&
                         <>
                             <span onClick={() => toSection('about-section')}>
                                 <p className='text-sky-500 text-xl'>{`///`}</p> {lang === 'En' ? 'me' : 'yo'}
@@ -36,7 +38,7 @@ const NavBar = ({ lang, switchLang }) => {
                             </span>
                         </>}
                     <span onClick={switchLang}>
-                        <p className='text-emerald-500 text-xl'>{`///`}</p> {lang === 'En' ? 'eng' : 'esp'}
+                        {!mobile && <p className='text-emerald-500 text-xl'>{`///`}</p>} {lang === 'En' ? 'eng' : 'esp'}
                     </span>
                 </div>
             </nav>

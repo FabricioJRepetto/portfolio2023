@@ -1,8 +1,10 @@
 import React from 'react'
+import { isMobile } from '../../utils/isMobile'
 import Dash from '../extras/Dash'
 import { TicTacToeAnim } from '../extras/TicTacToeAnim'
 
 const TicTacToe = ({ lang }) => {
+    const mobile = isMobile()
 
     return (
         <article className='project-page'>
@@ -20,7 +22,7 @@ const TicTacToe = ({ lang }) => {
                             <p>Web Sockets</p>
                         </div>
 
-                        <p className='text-xl  mb-8'>
+                        <p className='text-xl mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                             {lang === 'En'
                                 ? <>
@@ -36,10 +38,10 @@ const TicTacToe = ({ lang }) => {
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
-                        <a className='pr-8' href='https://tictactoeio.vercel.app' target='_blank' rel='noreferrer'>
+                        <a href='https://tictactoeio.vercel.app' target='_blank' rel='noreferrer'>
                             <b>Web</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/tictactoe-io' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/tictactoe-io' target='_blank' rel='noreferrer'>
                             <b>Repo. [front+back]</b>
                         </a>
 
@@ -47,7 +49,7 @@ const TicTacToe = ({ lang }) => {
                 </section>
 
                 <section className='project-logo'>
-                    <TicTacToeAnim />
+                    {!mobile && <TicTacToeAnim />}
                 </section>
             </header>
 

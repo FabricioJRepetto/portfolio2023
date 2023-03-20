@@ -5,11 +5,11 @@ const Main = ({ lang }) => {
 
     return (
         <section id='main-section' className='home-main-section'>
-            <article className='h-fit col-span-4 flex flex-col'>
+            <article className='h-fit col-span-7 md:col-span-4 flex flex-col'>
                 <h1 className="text-white font-bold tracking-tighter text-8xl">Fabricio Repetto</h1>
-                <p className="pl-40 w-3/4 text-4xl text-white font-bold mb-8">{`/// web developer`}</p>
+                <p className="pl-10 md:pl-40 md:w-3/4 text-2xl md:text-4xl text-white font-bold mb-8">{`/// web developer`}</p>
 
-                <p className='pl-40 w-3/4 text-2xl boder-slate-500'>
+                <p className='px-10 md:pl-40 md:w-3/4 text-2xl boder-slate-500'>
                     <b className=' text-emerald-600 font-normal -ml-6 mr-2'>{`<`}</b>
                     {lang === 'En'
                         ? <>
@@ -23,7 +23,7 @@ const Main = ({ lang }) => {
                 </p>
             </article>
 
-            <div className='relative col-span-3'>
+            <div className='relative col-span-3 hidden md:flex'>
                 <Avatar />
             </div>
         </section>

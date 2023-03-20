@@ -1,8 +1,11 @@
 import React from 'react'
+import { isMobile } from '../../utils/isMobile'
 import ClaritaLogo from '../extras/ClaritaLogo'
 import Dash from '../extras/Dash'
 
 const ClaritaAdmin = ({ lang }) => {
+    const mobile = isMobile()
+
     return (
         <article className='project-page'>
 
@@ -21,7 +24,7 @@ const ClaritaAdmin = ({ lang }) => {
                             <p>PWA</p>
                         </div>
 
-                        <p className='text-xl  mb-8'>
+                        <p>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                             {lang === 'En'
                                 ? <>
@@ -37,10 +40,10 @@ const ClaritaAdmin = ({ lang }) => {
                             <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
                         </p>
 
-                        <a className='pr-8' href='https://clarita-admin.vercel.app/login' target='_blank' rel='noreferrer'>
+                        <a href='https://clarita-admin.vercel.app/login' target='_blank' rel='noreferrer'>
                             <b>Web</b>
                         </a>
-                        <a className='pr-8' href='https://github.com/FabricioJRepetto/clarita-frontend' target='_blank' rel='noreferrer'>
+                        <a href='https://github.com/FabricioJRepetto/clarita-frontend' target='_blank' rel='noreferrer'>
                             <b>Repo. [front]</b>
                         </a>
                         <a href='https://github.com/FabricioJRepetto/clarita-backend' target='_blank' rel='noreferrer'>
@@ -51,11 +54,11 @@ const ClaritaAdmin = ({ lang }) => {
                 </section>
 
                 <section className='project-logo'>
-                    <ClaritaLogo />
+                    {!mobile && <ClaritaLogo />}
                 </section>
             </header>
 
-            <section className='col-span-4 mb-32'>
+            <section className='col-span-4 md:mb-32'>
                 <h2>
                     <Dash />
                     {lang === 'En' ? 'What is this project?' : '¿Qué es este proyecto?'}

@@ -7,11 +7,12 @@ const About = ({ lang }) => {
     const { isVisible } = useObserver(ref)
 
     return (
-        <section id='about-section' className={`min-h-screen items-center relative pb-16 transition-opacity duration-1000 ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
-            <article ref={ref} className='h-fit col-span-4 flex flex-col '>
+        <section id='about-section' className={`min-h-screen items-center relative mb-40 md:mb-0 md:pb-16 transition-opacity duration-1000 ${isVisible ? 'scroll-fade-in' : 'opacity-0'}`}>
+
+            <article ref={ref} className='h-fit col-span-7 md:col-span-4 flex flex-col '>
                 <h2 className="text-white font-bold tracking-tighter text-8xl mb-8">{lang === 'En' ? 'About Me' : 'Sobre Mí'}</h2>
 
-                <p className='pl-40 w-3/4 text-xl boder-slate-500'>
+                <p className='px-10 md:pl-40 md:w-3/4 text-base md:text-xl boder-slate-500'>
                     <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                     {lang === 'En'
                         ? <>
@@ -37,11 +38,11 @@ const About = ({ lang }) => {
 
             </article>
 
-            <div className='col-span-3 text-8xl tracking-tighter font-bold text-emerald-600'>
+            <div className='col-span-7 md:col-span-3 text-6xl md:text-8xl tracking-tighter font-bold text-emerald-600 -z-10'>
                 {isVisible && <TextSlider text={lang === 'En' ? ['Imagine', 'Learn', 'Create', 'Repeat'] : ['Imaginar', 'Aprender', 'Crear', 'Repetir']} />}
             </div>
 
-            <div className='absolute bottom-32 w-screen col-span-7 flex gap-8 justify-center items-start text-emerald-600'>
+            <div className='absolute -bottom-40 md:bottom-32 md:w-screen col-span-7 flex flex-wrap gap-3 md:gap-8 justify-center items-start text-emerald-600'>
                 <p>JavaScript</p>
                 <p>HTML</p>
                 <p>CSS</p>
