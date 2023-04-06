@@ -22,7 +22,7 @@ const NavBar = ({ lang, switchLang }) => {
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 ${pathname !== '/' ? '' : 'hidden'}`}>
             <nav className='nav-bar'>
-                <div onClick={home} ><b>FR</b> <Dash /><p className='hidden md:inline-flex'>{` web developer`}</p></div>
+                <div onClick={home} ><b>FR</b> <Dash /><p className='hidden md:inline-flex'>{` fullstack developer`}</p></div>
 
                 <div className='flex md:gap-6 fade-in'>
                     {(pathname === '/home' && !mobile) &&
