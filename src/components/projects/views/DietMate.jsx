@@ -24,12 +24,12 @@ const DietMate = ({ lang }) => {
                             <p>Google login</p>
                         </div>
 
-                        <p className='text-xl  mb-8'>
+                        <p className='text-xl mb-8'>
                             <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
                             {lang === 'En'
                                 ? <>
                                     Personal project.<br />
-                                    Meals organizer app, oriented to mobile use .<br />
+                                    Meals organizer app, oriented to mobile use.<br />
                                     API design, database and UI/UX.
                                 </>
                                 : <>
