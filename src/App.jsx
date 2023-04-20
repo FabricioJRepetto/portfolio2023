@@ -11,6 +11,7 @@ import Provider from './components/projects/views/Provider';
 import TicTacToe from './components/projects/views/TicTacToe';
 import Layout from './components/utils/Layout';
 import { Redirect } from './components/utils/Redirect';
+import ImageMutator from './components/projects/views/ImageMutator';
 
 function App() {
     useScrollReset()
@@ -33,6 +34,7 @@ function App() {
                         <Route path="tictactoe" element={<TicTacToe lang={lang} />} />
                         <Route path="dietmate" element={<DietMate lang={lang} />} />
                         <Route path="claritaadmin" element={<ClaritaAdmin lang={lang} />} />
+                        <Route path="imagemutator" element={<ImageMutator lang={lang} />} />
                     </Route>
                     <Route path='*' element={<Redirect />} />
                 </Routes>

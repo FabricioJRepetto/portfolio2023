@@ -18,6 +18,12 @@ const Projects = ({ lang }) => {
                 <h2 className={`text-white font-bold tracking-tighter text-8xl mb-8`}>{lang === 'En' ? 'Projects' : 'Proyectos'}</h2>
 
                 <div className=" md:w-10/12 self-center flex flex-col items-center">
+                    <label onClick={() => navigate('/projects/imagemutator')}>
+                        <Card title={'Image Mutator'}
+                            description={lang === 'En' ? 'Image modificator' : 'Modificador de imagenes'} bigMargin
+                            image='imagemutator' tags={['TypeScript', 'React']} />
+                    </label>
+
                     <label onClick={() => navigate('/projects/claritaadmin')}>
                         <Card title={lang === 'En' ? 'Clarita Cabins' : 'Cabañas Clarita'}
                             description={lang === 'En' ? 'Management system' : 'Sistema de gestión'} bigMargin

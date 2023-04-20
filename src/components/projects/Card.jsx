@@ -11,6 +11,7 @@ const Card = ({ title, description, place, image, tags, bigMargin }) => {
         tictactoe: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679100134/portfolio-preview/ttt_screenshot_nnbxf1_nle5mv.png',
         dietmate: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1679089508/portfolio-preview/dietmatelogo_s5zcwy.png',
         claritaadmin: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1678577562/portfolio-preview/clarita-logo_dt42ui.png',
+        imagemutator: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1682007047/portfolio-preview/imagemutator-thumbnail_okow5y.jpg',
     }
 
     return (

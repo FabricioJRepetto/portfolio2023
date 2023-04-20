@@ -465,8 +465,33 @@
     .project-page-bg-bot {
         @apply absolute bottom-0 left-0 h-screen w-screen bg-gradient-to-tr from-emerald-900/20 via-transparent -z-10;
     }
+
+    .imagemutator-logo-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        object-position: center;
+    }
+
+    .blob-container {
+        position: absolute;
+        top: -550%;
+        left: -75%;
+        transform: scale(.4);
+        z-index: -1;
+        animation: spin 750s infinite;
+    }
+
+    #blob-path  {
+        fill: #79b03b;
+    }
     
 }
+    @keyframes spin {
+        to {
+            rotate: 360deg;
+        }
+    }
 
 @keyframes linegrow {
     to {
