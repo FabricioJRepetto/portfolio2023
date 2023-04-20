@@ -62,12 +62,12 @@ const ImageMutator = ({ lang }) => {
                     {lang === 'En'
                         ? <>
                             This is mainly a practice project, in which I apply TypeScript and understand its advantages.<br />
-                            The main function is to style images, either standard or Gif, by taking the information from the file and using it to replace it with characters or curly brackets.<br />
+                            The main function is to style images, either standard or Gif, by taking the information from the file and using it to replace it with characters or circles.<br />
                             It is a simple application but it helped me to better understand new tools like TypeScript or web workers.
                         </>
                         : <>
                             Este es un proyecto principalmente de práctica, en el que aplico TypeScript y entiendo sus ventajas.<br />
-                            La principal función es estilizar imágenes, ya sean standard o Gif, tomando la información del archivo y utilizandola para reemplazarla por caracteres o curculos.<br />
+                            La principal función es estilizar imágenes, ya sean standard o Gif, tomando la información del archivo y utilizandola para reemplazarla por caracteres o círculos.<br />
                             Es una aplicación simple pero me ayudó a entender mejor nuevas herramientas como TypeScript o los web workers.
                         </>}
                     <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
