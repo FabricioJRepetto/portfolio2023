@@ -44,6 +44,7 @@ const About = ({ lang }) => {
 
             <div className='absolute -bottom-40 md:bottom-32 md:w-screen col-span-7 flex flex-wrap gap-3 md:gap-8 justify-center items-start text-emerald-600'>
                 <p>JavaScript</p>
+                <p>TypeScript</p>
                 <p>HTML</p>
                 <p>CSS</p>
                 <p>React</p>

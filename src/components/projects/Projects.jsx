@@ -53,13 +53,13 @@ const Projects = ({ lang }) => {
                     </label>
                 </div>
 
-                <p className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Coming soon...' : 'Próximamente...'}</p>
+                {/* <p className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Coming soon...' : 'Próximamente...'}</p>
 
                 <div className=" md:pl-40 md:w-3/4">
                     <label onClick={() => null}>
                         <Card title='Image Mutator' description={lang === 'En' ? 'Image manipulation' : 'Manipulación de imágenes'} />
                     </label>
-                </div>
+                </div> */}
 
             </article>
 
