@@ -160,29 +160,6 @@ const Provider = ({ lang }) => {
 
             <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1665168914/portfolio-preview/provider_details_gvhyax.png" alt="users" />
 
-            <section className='col-span-4'>
-                <h2>
-                    <Dash />
-                    {lang === 'En' ? 'Payment flow' : 'Flujo de pagos'}
-                </h2>
-
-                <p>
-                    <b className=' text-emerald-600 font-normal -ml-5 mr-2'>{`<`}</b>
-                    {lang === 'En'
-                        ? <>
-                            Provider store counts with two checkouts for payments, Stripe and Mercadopago (both in test mode).<br /> Users can add multiple products to the cart or quickly buy one. When they select a payment method, an order is generated and stored on the database, we use this information to create a payment session, when it's ready, we redirect the user to the external checkout page. If the payment is completed successfully, Stripe/Mercadopago notify our the backend and we update the user's order with a payment date and a delivery date, the correspondent products stock and notify the seller (if the seller is a user).<br /> At this point, the user can post a review about the products they bought.
-                        </>
-                        : <>
-                            Provider store cuenta con dos pasarelas de pago, Stripe y Mercadopago (ambos en modo prueba).<br />
-                            Los usuarios pueden añadir varios productos al carrito o comprar uno rapidamente. Cuando selecciona el metodo de pago, se genera una orden y se almacena en la base de datos, utilizamos esta información para crear una sesión de pago, cuando está lista, redirigimos al usuario a la página de pago externa. Si el pago se completa con éxito, Stripe/Mercadopago notifica nuestro backend y nosotros actualizamos la orden del usuario con la fecha de pago y la fecha de entrega, el stock de los productos correspondientes y notificamos al vendedor (si este es un usuario).<br />
-                            A partir de este momento, el usuario puede publicar una reseña sobre los productos que haya comprado.
-                        </>}
-                    <b className='text-emerald-600 font-normal ml-3 -mr-6'>{`/>`}</b>
-                </p>
-            </section>
-
-
-
             <div className='project-page-bg-top'></div>
             <div className='project-page-bg-bot'></div>
 
