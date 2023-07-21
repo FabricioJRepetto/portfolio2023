@@ -53,13 +53,25 @@ const Projects = ({ lang }) => {
                     </label>
                 </div>
 
-                {/* <p className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Coming soon...' : 'Próximamente...'}</p>
+                <p className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Mini projects...' : 'Mini proyectos...'}</p>
 
                 <div className=" md:pl-40 md:w-3/4">
                     <label onClick={() => null}>
-                        <Card title='Image Mutator' description={lang === 'En' ? 'Image manipulation' : 'Manipulación de imágenes'} />
+                        <Card title={lang === 'En' ? "Conway's Game of Life" : "Juego de la Vida de Conway"} description={lang === 'En' ? 'Program that aplies the rules of the game of life' : 'Programa que aplica las reglas del juego de la vida'} tags={['JavaScript vanilla', 'HTML', 'CSS']} />
                     </label>
-                </div> */}
+
+                    <label onClick={() => null}>
+                        <Card title='Whatsapp STT (speech to text)' description={lang === 'En' ? 'API that intercepts, transcribes and sends whatsapp voice messages transcriptions' : 'API que intercepta, transcribe y envía transcripciones de mensajes de voz de whatsapp'} tags={['JavaScript', 'Node.js', 'APIs']} />
+                    </label>
+
+                    <label onClick={() => null}>
+                        <Card title={lang === 'En' ? "Text encryptor" : "Encriptador de texto"} description={lang === 'En' ? 'Simple encryptor developed on JavaScript' : 'Encriptador simple desarrollado en JavaScript'} tags={['JavaScript vanilla', 'HTML', 'CSS']} />
+                    </label>
+
+                    <label onClick={() => null}>
+                        <Card title={lang === 'En' ? "Units Conversor" : "Conversor de unidades"} description={lang === 'En' ? 'Currency, lengths and temperature conversor developed on Java and JavaFX' : 'Conversor de divisas, longitudes y temperatura, desarrollado en Java y JavaFX para la interfaz gráfica'} tags={['Java', 'JavaFX', 'Scene Builder', 'CSS']} />
+                    </label>
+                </div>
 
             </article>
 

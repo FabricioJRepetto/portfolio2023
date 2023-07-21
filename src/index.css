@@ -189,7 +189,7 @@
         @apply transition-opacity border duration-700 px-2 rounded-lg w-fit h-fit ;
     }
     .card-tags-container {
-        @apply h-fit ml-4 mb-4 grid grid-flow-col grid-rows-4 gap-2 relative;
+        @apply h-fit ml-4 pl-4 mb-4 grid grid-flow-col grid-rows-4 gap-2 relative;
     }
     .card-tags-container > p:nth-child(4n) {
         @apply border-emerald-500;
