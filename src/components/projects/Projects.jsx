@@ -56,7 +56,7 @@ const Projects = ({ lang }) => {
                 <p className="font-bold tracking-tighter text-4xl mt-32 mb-8">{lang === 'En' ? 'Mini projects...' : 'Mini proyectos...'}</p>
 
                 <div className=" md:pl-40 md:w-3/4">
-                    <label onClick={() => null}>
+                    <label onClick={() => window.open('https://fabriciojrepetto.github.io/Life-Game/', '_blank')}>
                         <Card title={lang === 'En' ? "Conway's Game of Life" : "Juego de la Vida de Conway"} description={lang === 'En' ? 'Program that aplies the rules of the game of life' : 'Programa que aplica las reglas del juego de la vida'} tags={['JavaScript vanilla', 'HTML', 'CSS']} />
                     </label>
 

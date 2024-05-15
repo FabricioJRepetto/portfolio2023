@@ -28,7 +28,7 @@ function App() {
                     <Route path='/home' element={<Home lang={lang} />} />
 
                     <Route path="projects" element={<Layout />} >
-                        <Route index element={<Layout />} />
+                        <Route index element={<Layout />} /> {/* TODO */}
                         <Route path="doghouse" element={<DogHouse lang={lang} />} />
                         <Route path="providerstore" element={<Provider lang={lang} />} />
                         <Route path="tictactoe" element={<TicTacToe lang={lang} />} />
